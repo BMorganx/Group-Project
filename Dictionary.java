@@ -11,8 +11,9 @@ public class Dictionary {
 
     /*
     Desc: Gets a random adjective.
-    Precondition:
-    Postcondition:
+    Precondition: Adjectives.txt exists.
+    Postcondition: returns a random element from the adjectivesArray
+    Throws: FileNotFoundException if the file Adjectives.txt is not found.
     */
     public String adjectives() throws FileNotFoundException {
         Scanner adFile = new Scanner(new File("Adjectives.txt"));
@@ -31,8 +32,9 @@ public class Dictionary {
 
     /*
     Desc: Gets a random noun.
-    Precondition:
-    Postcondition:
+    Precondition: Nouns.txt exists.
+    Postcondition: returns a random element from the nounsArray
+    Throws: FileNotFoundException if the file Nouns.txt is not found.
     */
     public String nouns() throws FileNotFoundException {
         Scanner nounsFile = new Scanner(new File("Nouns.txt"));

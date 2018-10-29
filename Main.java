@@ -2,9 +2,18 @@ import java.io.FileNotFoundException;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    /*
+    Desc: Creates the insult string.
+    Precondition:
+    Postcondition: returns insult string
+    Throws: FileNotFoundException if file is not found.
+     */
+    public String output() throws FileNotFoundException {
         Dictionary dictionary = new Dictionary();
 
-        System.out.println("You are a/n " + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+        String insult = ("You are a/n " + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+
+        return insult;
+
     }
 }

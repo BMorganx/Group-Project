@@ -1,7 +1,7 @@
 banana
 water bottle
-legume 
-cotton Ball
+legume
+cotton ball
 microwave
 strawberry
 orange
@@ -9,21 +9,21 @@ watermelon
 bag
 chicken
 sack of potatoes
-pencil eraser 
+pencil eraser
 asparagus
-broccoli 
+broccoli
 sofa
 taco
 pillow
 hairbrush
 melon
-table 
+table
 chair
 marble
 lard
 rock
 lamp
-dirt
+piece of dirt
 worm
 bread loaf
 toilet

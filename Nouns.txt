@@ -20,3 +20,11 @@ melon
 table 
 chair
 marble
+lard
+rock
+lamp
+dirt
+worm
+bread loaf
+toilet
+cow

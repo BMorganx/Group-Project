@@ -8,6 +8,8 @@ public class Dictionary {
 
     public ArrayList<String> adjectivesList = new ArrayList<String>();
     public ArrayList<String> nounsList = new ArrayList<String>();
+    public ArrayList<String> verbsList = new ArrayList<String>();
+
 
     /*
     Desc: Gets a random adjective.
@@ -29,6 +31,30 @@ public class Dictionary {
 
         return randomAdjective;
     }
+    
+      /**
+     * verbs
+     * public String verbs() throws FileNotFoundException
+     * Desc: Get a random verb for insult sentence
+     * Precondition: Verbs.txt exists.
+     * Postcondition: returns a random element from the verbsArray.
+     * Throws: FileNotFoundException if the file Verbs.txt is not found.
+     */
+    public String verbs() throws FileNotFoundException {
+    	Scanner verFile = new Scanner(new File("Verbs.txt"));
+    	
+    	while(verFile.hasNext()) {
+    		verbsList.add(verFile.nextLine());
+    	}
+        
+    	String[] verbsArray = verbsList.toArray(new String[50]);
+        
+    	int index = new Random().nextInt(verbsArray.length);
+    	String randomVerb = (verbsArray[index]);
+    	
+    	return randomVerb;
+    }
+
 
     /*
     Desc: Gets a random noun.

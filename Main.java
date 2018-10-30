@@ -11,8 +11,33 @@ public class Main {
     public String output() throws FileNotFoundException {
         Dictionary dictionary = new Dictionary();
 
-        String insult = ("You are a/n " + dictionary.adjectives() + " " + dictionary.nouns() + "!");
-
+        String insult;
+        int choiceInsult = ThreadLocalRandom.current().nextInt(0, 6 + 1);
+       
+        // Generate a random insult from cases
+        switch(choiceInsult) {
+	        case 1:
+	        	insult = ("You are a/n " + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+	        	break;
+	        case 2:
+	        	insult = ("Your mom is a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+	        	break;
+	        case 3:
+	        	insult = ("Your dad is a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+	        	break;
+	        case 4:
+	        	 insult = ("Your sister is a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+	        	break;
+	        case 5:
+	        	insult = ("Your computer is " + dictionary.adjectives() + " " + "!");
+	        	break;
+	        case 6:
+	        	insult = ("Your house is " + dictionary.adjectives() + " " + "!");
+	        	break;
+	        default:
+	        	insult = ("You are a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+        }
+        
         return insult;
 
     }

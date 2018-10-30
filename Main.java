@@ -4,10 +4,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     /**
-    Desc: Creates the insult string.
-    Precondition:
-    Postcondition: returns insult string
-    Throws: FileNotFoundException if file is not found.
+     *output
+     *public String output() throws FileNotFoundException
+     *Desc: Creates the insult string.
+     *Precondition: N/A
+     *Postcondition: returns insult string
+     *Throws: FileNotFoundException if file is not found.
      */
     public String output() throws FileNotFoundException {
         Dictionary dictionary = new Dictionary();

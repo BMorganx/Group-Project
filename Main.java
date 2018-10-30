@@ -3,7 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
 
-    /*
+    /**
     Desc: Creates the insult string.
     Precondition:
     Postcondition: returns insult string
@@ -27,7 +27,7 @@ public class Main {
 	        	insult = ("Your dad is a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
 	        	break;
 	        case 4:
-	        	 insult = ("Your sister is a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+	        	insult = ("Your sister is a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
 	        	break;
 	        case 5:
 	        	insult = ("Your computer is " + dictionary.adjectives() + " " + "!");
@@ -37,6 +37,7 @@ public class Main {
 	        	break;
 	        default:
 	        	insult = ("You are a/an" + dictionary.adjectives() + " " + dictionary.nouns() + "!");
+			break;
         }
         
         return insult;

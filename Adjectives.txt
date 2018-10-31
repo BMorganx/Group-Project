@@ -33,7 +33,7 @@ bossy
 grumpy
 moody
 pompous
-belligerant
+belligerent
 cynical
 thoughtless
 vain

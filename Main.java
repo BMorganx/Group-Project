@@ -23,16 +23,16 @@ public class Main {
         // Generate a random insult from cases
         switch(choiceInsult) {
             case 1:
-                insult = ("You are a/n " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+                insult = outputSelf();
                 break;
             case 2:
-                insult = ("Yo mama is a/an " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+                insult = outputMama();
                 break;
             case 3:
-                insult = ("Yo dada is a/an " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+                insult = outputDad();
                 break;
             default:
-                insult = ("You are a/an " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+                insult = outputSelf();
                 break;
         }
 

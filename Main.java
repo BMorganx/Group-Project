@@ -14,7 +14,7 @@ public class Main {
      *Postcondition: returns insult string
      *Throws: FileNotFoundException if file is not found.
      */
-    public String output() throws FileNotFoundException {
+    public String outputRandom() throws FileNotFoundException {
         Dictionary dictionary = new Dictionary();
 
         String insult;

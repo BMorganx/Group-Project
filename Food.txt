@@ -8,7 +8,7 @@ jello
 stir fry
 hamburger
 baked potato
-curry
+bowl of curry
 fish pie
 chicken salad
 spring roll
@@ -28,6 +28,11 @@ cupcake
 orange chicken
 mashed potato
 ice cream cone
+meatball
+omelette
+pizza
+dumpling
+tempura
 asaparagus
 green bean
 soy bean

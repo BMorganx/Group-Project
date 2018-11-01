@@ -46,8 +46,8 @@ public class Dictionary {
         }
 
         String[] foodsArray = foodsList.toArray(new String[95]);
-        int index2 = new Random().nextInt(foodsArray.length);
-        String randomFood = (foodsArray[index2]);
+        int index = new Random().nextInt(foodsArray.length);
+        String randomFood = (foodsArray[index]);
 
         return randomFood;
     }
@@ -66,8 +66,8 @@ public class Dictionary {
         }
 
         String[] fruitsArray = fruitsList.toArray(new String[36]);
-        int index2 = new Random().nextInt(fruitsArray.length);
-        String randomfruit = (fruitsArray[index2]);
+        int index = new Random().nextInt(fruitsArray.length);
+        String randomfruit = (fruitsArray[index]);
 
         return randomfruit;
     }
@@ -86,8 +86,8 @@ public class Dictionary {
         }
 
         String[] vegetablesArray = vegetablesList.toArray(new String[24]);
-        int index2 = new Random().nextInt(vegetablesArray.length);
-        String randomVegetable = (vegetablesArray[index2]);
+        int index = new Random().nextInt(vegetablesArray.length);
+        String randomVegetable = (vegetablesArray[index]);
 
         return randomVegetable;
     }

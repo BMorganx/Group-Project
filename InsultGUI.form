@@ -28,7 +28,7 @@
         <properties>
           <font name="Century Gothic" size="12"/>
           <foreground color="-1"/>
-          <text value="Insult yourself, yo mama, or yo dada."/>
+          <text value="Insult yourself, yo mama, or yo dad."/>
         </properties>
       </component>
       <component id="9868d" class="javax.swing.JLabel">

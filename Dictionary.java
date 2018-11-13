@@ -10,6 +10,7 @@ public class Dictionary {
     public ArrayList<String> foodsList = new ArrayList<String>();
     public ArrayList<String> fruitsList = new ArrayList<>();
     public ArrayList<String> vegetablesList = new ArrayList<>();
+    public ArrayList<String> verbsList = new ArrayList<>();
 
     /**
      * Desc: Gets a random adjective from adjective.txt
@@ -32,6 +33,27 @@ public class Dictionary {
         return randomAdjective;
     }
 
+    /**
+     * Desc: Gets a random verb from Verbs.txt
+     * Precondition: Verbs.txt exists.
+     * @return randomVerb
+     * @throws FileNotFoundException if the file Verbs.txt is not found.
+     */
+    public String verbs() throws FileNotFoundException {
+        Scanner verbFile = new Scanner(new File("Verbs.txt"));
+
+        while(verbFile.hasNext()){
+            verbsList.add(verbFile.nextLine());
+        }
+
+        String[] verbsArray = verbsList.toArray(new String[50]);
+
+        int index = new Random().nextInt(verbsArray.length);
+        String randomVerb = (verbsArray[index]);
+
+        return randomVerb;
+    }
+    
     /**
      * Desc: Gets a random noun from food.txt
      * Precondition: Food.txt exists

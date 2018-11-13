@@ -31,6 +31,8 @@ public class Main {
             case 3:
                 insult = outputDad();
                 break;
+            case 4:
+            	insult = outputAny();
             default:
                 insult = outputSelf();
                 break;
@@ -40,14 +42,39 @@ public class Main {
 
     }
 
-    /**
+    String outputAny() throws FileNotFoundException {
+    	String insult;
+        int choiceInsult = ThreadLocalRandom.current().nextInt(0, 4 + 1);
+
+        // Generate a random insult from cases
+        switch(choiceInsult) {
+            case 1:
+                insult = outputSelf();
+                break;
+            case 2:
+                insult = outputMama();
+                break;
+            case 3:
+                insult = outputDad();
+                break;
+            case 4:
+            	insult = "I'm a/an" + dictionary.adjectives() + " " + dictionary.verbs() + " " + dictionary.foods() + "!";
+            default:
+                insult = outputSelf();
+                break;
+        }
+
+        return insult;
+	}
+
+	/**
      * Desc: Creates insult string for "yo mama"
      * @return insult
      * @throws FileNotFoundException if file is not found.
      */
 
     public String outputMama() throws FileNotFoundException {
-        String  insult = ("Yo mama is a/an " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+        String  insult = ("Yo mama is a/an " + dictionary.verbs() + " " + dictionary.adjectives() + " " + dictionary.foods() + "!");
 
         return insult;
     }
@@ -58,7 +85,7 @@ public class Main {
      * @throws FileNotFoundException if file is not found.
      */
     public String outputDad() throws FileNotFoundException{
-        String insult = insult = ("Yo dad is a/an " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+        String insult = ("Yo dad is a/an " + dictionary.verbs() + " " + dictionary.adjectives() + " " + dictionary.foods() + "!");
 
         return insult;
     }
@@ -69,7 +96,7 @@ public class Main {
      * @throws FileNotFoundException if file is not found.
      */
     public String outputSelf() throws FileNotFoundException{
-        String insult = ("You're a/an " + dictionary.adjectives() + " " + dictionary.foods() + "!");
+        String insult = ("You're a/an " + dictionary.verbs() + " " + dictionary.adjectives() + " " + dictionary.foods() + "!");
 
         return insult;
     }

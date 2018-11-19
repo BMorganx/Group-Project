@@ -1,16 +1,14 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Dictionary {
 
-    public ArrayList<String> adjectivesList = new ArrayList<String>();
-    public ArrayList<String> foodsList = new ArrayList<String>();
-    public ArrayList<String> fruitsList = new ArrayList<>();
-    public ArrayList<String> vegetablesList = new ArrayList<>();
-    public ArrayList<String> verbsList = new ArrayList<>();
+    ArrayBag<String> adjectives = new ArrayBag<>();
+    ArrayBag<String> verbs = new ArrayBag<>();
+    ArrayBag<String> foods = new ArrayBag<>();
+    ArrayBag<String> fruits = new ArrayBag<>();
+    ArrayBag<String> vegetables = new ArrayBag<>();
 
     /**
      * Desc: Gets a random adjective from adjective.txt
@@ -22,13 +20,10 @@ public class Dictionary {
         Scanner adFile = new Scanner(new File("Adjectives.txt"));
 
         while(adFile.hasNext()){
-            adjectivesList.add(adFile.nextLine());
+            adjectives.add(adFile.nextLine());
         }
 
-        String[] adjectivesArray = adjectivesList.toArray(new String[50]);
-
-        int index = new Random().nextInt(adjectivesArray.length);
-        String randomAdjective = (adjectivesArray[index]);
+        String randomAdjective = adjectives.grab();
 
         return randomAdjective;
     }
@@ -43,17 +38,14 @@ public class Dictionary {
         Scanner verbFile = new Scanner(new File("Verbs.txt"));
 
         while(verbFile.hasNext()){
-            verbsList.add(verbFile.nextLine());
+            verbs.add(verbFile.nextLine());
         }
 
-        String[] verbsArray = verbsList.toArray(new String[50]);
-
-        int index = new Random().nextInt(verbsArray.length);
-        String randomVerb = (verbsArray[index]);
+        String randomVerb = verbs.grab();
 
         return randomVerb;
     }
-    
+
     /**
      * Desc: Gets a random noun from food.txt
      * Precondition: Food.txt exists
@@ -64,12 +56,10 @@ public class Dictionary {
         Scanner foodsFile = new Scanner(new File("Food.txt"));
 
         while(foodsFile.hasNext()){
-            foodsList.add(foodsFile.nextLine());
+            foods.add(foodsFile.nextLine());
         }
 
-        String[] foodsArray = foodsList.toArray(new String[95]);
-        int index = new Random().nextInt(foodsArray.length);
-        String randomFood = (foodsArray[index]);
+        String randomFood = foods.grab();
 
         return randomFood;
     }
@@ -84,12 +74,10 @@ public class Dictionary {
         Scanner fruitsFile = new Scanner(new File("Fruits.txt"));
 
         while(fruitsFile.hasNext()){
-            foodsList.add(fruitsFile.nextLine());
+            fruits.add(fruitsFile.nextLine());
         }
 
-        String[] fruitsArray = fruitsList.toArray(new String[36]);
-        int index = new Random().nextInt(fruitsArray.length);
-        String randomfruit = (fruitsArray[index]);
+        String randomfruit = fruits.grab();
 
         return randomfruit;
     }
@@ -104,12 +92,10 @@ public class Dictionary {
         Scanner vegetablesFile = new Scanner(new File("Vegetables.txt"));
 
         while(vegetablesFile.hasNext()){
-            foodsList.add(vegetablesFile.nextLine());
+            vegetables.add(vegetablesFile.nextLine());
         }
 
-        String[] vegetablesArray = vegetablesList.toArray(new String[24]);
-        int index = new Random().nextInt(vegetablesArray.length);
-        String randomVegetable = (vegetablesArray[index]);
+        String randomVegetable = vegetables.grab();
 
         return randomVegetable;
     }

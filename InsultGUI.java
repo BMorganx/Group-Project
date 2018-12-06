@@ -50,15 +50,7 @@ public class InsultGUI {
                 }
             }
         });
-
-        //OUTPUT LIST OF FOODS
-        listOfFoodsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
+        
         //Outputs list of food
         listOfFoodsButton.addActionListener(new ActionListener() {
             @Override
@@ -67,6 +59,17 @@ public class InsultGUI {
                     main.outputListOfFoods();
                 } catch (FileNotFoundException e1) {
                     e1.printStackTrace();
+                }
+            }
+        });
+        RANDOMButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    textArea1.setText(main.outputRandom());
+                } catch (FileNotFoundException e1) {
+                    e1.printStackTrace();
+                    ;
                 }
             }
         });

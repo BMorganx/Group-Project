@@ -76,6 +76,11 @@ public class Main {
         return insult;
     }
 
+    /**
+     * Desc: Pushes items in food list txt into a stack and pops the stack when called.
+     * Postcondition: Outputs list of foods
+     * @throws FileNotFoundException if file is not found
+     */
     public void outputListOfFoods() throws FileNotFoundException {
         ArrayStack arrayStack = new ArrayStack();
 

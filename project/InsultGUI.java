@@ -114,6 +114,8 @@ public class InsultGUI {
         GridBagConstraints gbc;
         
         menuBar = new JMenuBar();
+        menuBar.setForeground(SystemColor.text);
+        menuBar.setBackground(SystemColor.info);
         GridBagConstraints gbc_menuBar = new GridBagConstraints();
         gbc_menuBar.insets = new Insets(0, 0, 5, 0);
         gbc_menuBar.gridx = 2;

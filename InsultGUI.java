@@ -101,6 +101,26 @@ public class InsultGUI {
         label1.setForeground(new Color(-1));
         label1.setText("Insult yourself, yo mama, or yo dad.");
         GridBagConstraints gbc;
+        
+        menuBar = new JMenuBar();
+        GridBagConstraints gbc_menuBar = new GridBagConstraints();
+        gbc_menuBar.insets = new Insets(0, 0, 5, 0);
+        gbc_menuBar.gridx = 2;
+        gbc_menuBar.gridy = 0;
+        panel1.add(menuBar, gbc_menuBar);
+        
+        mnNewMenu = new JMenu(". . .");
+        menuBar.add(mnNewMenu);
+        
+        mntmNewMenuItem = new JMenuItem("Add Word");
+        mnNewMenu.add(mntmNewMenuItem);
+        
+        mntmNewMenuItem_1 = new JMenuItem("Remove Word");
+        mnNewMenu.add(mntmNewMenuItem_1);
+        
+        mntmNewMenuItem_2 = new JMenuItem("Exit");
+        mnNewMenu.add(mntmNewMenuItem_2);
+        
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 1;

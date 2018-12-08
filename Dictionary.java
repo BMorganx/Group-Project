@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Dictionary {
 
-    ArrayBag<String> adjectives = new ArrayBag<>();
-    ArrayBag<String> verbs = new ArrayBag<>();
-    ArrayBag<String> foods = new ArrayBag<>();
-    ArrayBag<String> fruits = new ArrayBag<>();
-    ArrayBag<String> vegetables = new ArrayBag<>();
+    private ArrayBag<String> adjectives = new ArrayBag<>();
+    private ArrayBag<String> verbs = new ArrayBag<>();
+    private ArrayBag<String> foods = new ArrayBag<>();
+    private ArrayBag<String> fruits = new ArrayBag<>();
+    private ArrayBag<String> vegetables = new ArrayBag<>();
 
     /**
      * Desc: Gets a random adjective from adjective.txt
@@ -99,4 +99,6 @@ public class Dictionary {
 
         return randomVegetable;
     }
+
+
 }

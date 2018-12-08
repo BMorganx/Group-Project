@@ -1,10 +1,12 @@
+import javax.swing.*;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
 
     Dictionary dictionary = new Dictionary();
-
 
     /**
      *output
@@ -31,8 +33,6 @@ public class Main {
             case 3:
                 insult = outputDad();
                 break;
-            case 4:
-            	insult = outputAny();
             default:
                 insult = outputSelf();
                 break;
@@ -42,32 +42,7 @@ public class Main {
 
     }
 
-    String outputAny() throws FileNotFoundException {
-    	String insult;
-        int choiceInsult = ThreadLocalRandom.current().nextInt(0, 4 + 1);
-
-        // Generate a random insult from cases
-        switch(choiceInsult) {
-            case 1:
-                insult = outputSelf();
-                break;
-            case 2:
-                insult = outputMama();
-                break;
-            case 3:
-                insult = outputDad();
-                break;
-            case 4:
-            	insult = "I'm a/an" + dictionary.adjectives() + " " + dictionary.verbs() + " " + dictionary.foods() + "!";
-            default:
-                insult = outputSelf();
-                break;
-        }
-
-        return insult;
-	}
-
-	/**
+    /**
      * Desc: Creates insult string for "yo mama"
      * @return insult
      * @throws FileNotFoundException if file is not found.
@@ -100,4 +75,25 @@ public class Main {
 
         return insult;
     }
+
+    /**
+     * Desc: Pushes items in food list txt into a stack and pops the stack when called.
+     * Postcondition: Outputs list of foods
+     * @throws FileNotFoundException if file is not found
+     */
+    public void outputListOfFoods() throws FileNotFoundException {
+        ArrayStack arrayStack = new ArrayStack();
+
+        Scanner foodsFile = new Scanner(new File("Food.txt"));
+
+        while(foodsFile.hasNext()){
+            arrayStack.push(foodsFile.nextLine());
+        }
+
+        for(int i = 0; i <= arrayStack.size()+1; i++){
+            System.out.println(arrayStack.pop());
+        }
+
+    }
+
 }

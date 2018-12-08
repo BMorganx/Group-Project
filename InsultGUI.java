@@ -13,6 +13,10 @@ public class InsultGUI {
     private JButton iNSUButton;
     private JButton listOfFoodsButton;
     private JButton RANDOMButton;
+    private JMenu mnNewMenu;
+    private JMenuItem mntmNewMenuItem;
+    private JMenuItem mntmNewMenuItem_1;
+    private JMenuItem mntmNewMenuItem_2;
 
     Main main = new Main();
 

@@ -34,3 +34,7 @@ longan
 pumpkin
 guava
 kumquat
+Salak
+SalmonBerry
+Açaí
+Bilberry

@@ -1,8 +1,5 @@
 import javax.swing.*;
 import javax.swing.JPanel;
-
-import project.ArrayBag;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,8 +24,6 @@ public class InsultGUI{
     private JMenuItem mntmNewMenuItem;
     private JMenuItem mntmNewMenuItem_1;
     private JMenuItem mntmNewMenuItem_2;
-    
-	ArrayBag<String> arrBag = new ArrayBag();
 
     Main main = new Main();
     private GridBagConstraints gbc_1;
@@ -117,7 +112,7 @@ public class InsultGUI{
         frame.getContentPane().setBackground(new Color(240, 255, 240));
         frame.setContentPane(new InsultGUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(550, 450);
+        frame.setSize(600, 450);
         frame.setVisible(true);
 
     }
@@ -176,6 +171,7 @@ public class InsultGUI{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						String fileContent = "\n" + (addtxt.getText());
+						main.add(addtxt.getText());
        			     
         			    BufferedWriter writer;
         			    

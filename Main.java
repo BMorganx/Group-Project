@@ -5,6 +5,8 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
+	
+    private ArrayStack<String> arrayStack = new ArrayStack<String>();
 
     Dictionary dictionary = new Dictionary();
 
@@ -83,34 +85,7 @@ public class Main {
      * @return 
      * @throws FileNotFoundException if file is not found
      */
-    public static String outputListOfFoods() throws FileNotFoundException {
-        ArrayStack<String> arrayStack = new ArrayStack<String>();
-
-        Scanner foodsFile = new Scanner(new File("Food.txt"));
-
-        while(foodsFile.hasNext()){
-            arrayStack.push(foodsFile.nextLine());
-        }
-
-        for(int i = 0; i <= arrayStack.size()+1; i++){
-            return arrayStack.pop();
-        }
-		String x = "";
-
-        int count = 0;
-		while(!arrayStack.isEmpty() && count<  arrayStack.size()+1)
-        {
-            x = arrayStack.pop();
-            count++;
-            return x;
-        }
-
-		return arrayStack.toString();
-
-    }
-    
-    public void outputListOfFoods1() throws FileNotFoundException {
-        ArrayStack<String> arrayStack = new ArrayStack<String>();
+    public void outputListOfFoods() throws FileNotFoundException {
 
         Scanner foodsFile = new Scanner(new File("Food.txt"));
 
@@ -124,6 +99,10 @@ public class Main {
 
         } 
 
+    }
+    
+    public void add(String foodString) {
+    	arrayStack.push(foodString);
     }
 
 }

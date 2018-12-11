@@ -93,10 +93,36 @@ public class Main {
         }
 
         for(int i = 0; i <= arrayStack.size()+1; i++){
-            System.out.println(arrayStack.pop());
             return arrayStack.pop();
         }
-		return arrayStack.pop();
+		String x = "";
+
+        int count = 0;
+		while(!arrayStack.isEmpty() && count<  arrayStack.size()+1)
+        {
+            x = arrayStack.pop();
+            count++;
+            return x;
+        }
+
+		return arrayStack.toString();
+
+    }
+    
+    public void outputListOfFoods1() throws FileNotFoundException {
+        ArrayStack<String> arrayStack = new ArrayStack<String>();
+
+        Scanner foodsFile = new Scanner(new File("Food.txt"));
+
+        while(foodsFile.hasNext()){
+            arrayStack.push(foodsFile.nextLine());
+        }
+
+        for(int i = 0; i <= arrayStack.size()+1; i++){ 
+
+        	System.out.println(arrayStack.pop()); 
+
+        } 
 
     }
 

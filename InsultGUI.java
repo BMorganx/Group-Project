@@ -7,6 +7,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class InsultGUI extends Main {
     private JPanel panel1;
@@ -172,16 +174,20 @@ public class InsultGUI extends Main {
         				arrBag.add(addtxt.getText());
 					}
         		});
-        		
-        		wordArea.setEditable(false);
-        		try {
-					wordArea.setText(outputListOfFoods());
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
         		no.setTitle("Add word");
+        		wordArea.setEditable(false);
+        		
+        		try {
+                    // Read some text from the resource file to display in
+                    // the JTextArea.
+                    wordArea.read(new InputStreamReader(
+                            getClass().getResourceAsStream("/Food.txt")),
+                        null);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         	}
+        	
         });
         
         mntmNewMenuItem.setForeground(new Color(216, 191, 216));
@@ -216,16 +222,17 @@ public class InsultGUI extends Main {
         			}
         			
         		});
-        
-        		wordListArea.setEditable(false);
+        		
         		try {
-					wordListArea.setText(outputListOfFoods());
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-        
-        		//remove.add(listtxtArea);
+                    // Read some text from the resource file to display in
+                    // the JTextArea.
+                    wordListArea.read(new InputStreamReader(
+                            getClass().getResourceAsStream("/Food.txt")),
+                        null);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        		wordListArea.setEditable(false);
         		
         	}
         });

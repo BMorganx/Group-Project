@@ -1,5 +1,8 @@
 import javax.swing.*;
 import javax.swing.JPanel;
+
+import project.ArrayBag;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +22,7 @@ public class InsultGUI extends Main {
     private JMenuItem mntmNewMenuItem_1;
     private JMenuItem mntmNewMenuItem_2;
     
+	ArrayBag<String> arrBag = new ArrayBag();
 
     Main main = new Main();
     private GridBagConstraints gbc_1;
@@ -34,13 +38,14 @@ public class InsultGUI extends Main {
     private JLabel addlbl = new JLabel("Add a word:");        		
 	private JTextField addtxt = new JTextField("",10);
 	private JButton add = new JButton("Add");
-	private JTextArea wordArea = new JTextArea("");
+	private JTextArea wordArea = new JTextArea(10, 20);
 	private JLabel wordListlbl = new JLabel("Word List:");
     
     private JTextField removetxt = new JTextField("",10);
 	private JLabel removelbl = new JLabel("Remove a word:");
 	private JButton removebtn = new JButton("Remove");
-	private JTextArea wordListArea = new JTextArea();
+	private JTextArea wordListArea = new JTextArea(10,20);
+
 
     public InsultGUI() {
         $$$setupUI$$$();
@@ -151,12 +156,23 @@ public class InsultGUI extends Main {
         		no.getContentPane().setForeground(new Color(255, 255, 240));
         		no.setLayout(new FlowLayout());
         		
-        		no.setSize(330,200);
+        		no.setSize(290,275);
         		no.add(addlbl);
         		no.add(addtxt);
         		no.add(add);
         		no.add(wordListlbl);
         		no.add(wordArea);
+        		JScrollPane scroll = new JScrollPane (wordArea, 
+        				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+        		no.add(scroll);
+        		add.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+        				arrBag.add(addtxt.getText());
+					}
+        		});
+        		
         		wordArea.setEditable(false);
         		try {
 					wordArea.setText(outputListOfFoods());
@@ -182,16 +198,25 @@ public class InsultGUI extends Main {
         		remove.getContentPane().setBackground(new Color(216, 191, 216));
         		remove.getContentPane().setForeground(new Color(255, 255, 240));
         		remove.setTitle("Remove word");
-        		remove.setSize(340,200);
+        		remove.setSize(340,260);
         		remove.setBackground(new Color(240, 255, 240));
-        		
-        		
         		remove.add(removelbl);
         		remove.add(removetxt);
         		remove.add(removebtn);
         		remove.add(wordListlbl);
         		remove.add(wordListArea);
-        		remove.add(wordListArea);
+        		JScrollPane scroll = new JScrollPane (wordListArea, 
+     				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        		
+        		remove.add(scroll);
+        		removebtn.addActionListener(new ActionListener() {
+        			@Override
+        			public void actionPerformed(ActionEvent evt) {
+        				arrBag.remove(removetxt.getText());
+        			}
+        			
+        		});
+        
         		wordListArea.setEditable(false);
         		try {
 					wordListArea.setText(outputListOfFoods());

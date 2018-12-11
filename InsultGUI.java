@@ -91,6 +91,7 @@ public class InsultGUI {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Insult Generator");
+        frame.getContentPane().setBackground(new Color(240, 255, 240));
         frame.setContentPane(new InsultGUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(550, 450);
@@ -129,18 +130,73 @@ public class InsultGUI {
         menuBar.add(mnNewMenu);
         
         mntmNewMenuItem = new JMenuItem("Add Word");
+        mntmNewMenuItem.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		JDialog no = new JDialog();
+        		no.setVisible(true);
+        		no.setBackground(new Color(240, 255, 240));
+        		no.getContentPane().setBackground(new Color(216, 191, 216));
+        		no.getContentPane().setForeground(new Color(255, 255, 240));
+        		no.setLayout(new FlowLayout());
+        		JLabel addlbl = new JLabel("Add a word:");        		
+        		JTextField addtxt = new JTextField("",10);
+        		JButton add = new JButton("Add");
+        		JTextArea wordArea = new JTextArea("");
+        		JLabel wordListlbl = new JLabel("Word List:");
+        		no.setSize(300,200);
+        		no.add(addlbl);
+        		no.add(addtxt);
+        		no.add(add);
+        		no.add(wordListlbl);
+        		no.add(wordArea);
+        		
+        		no.setTitle("Add word");
+        		//no.add(listtxtArea);
+        	}
+        });
+        
         mntmNewMenuItem.setForeground(new Color(216, 191, 216));
         mntmNewMenuItem.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         mntmNewMenuItem.setBackground(new Color(255, 255, 240));
         mnNewMenu.add(mntmNewMenuItem);
         
         mntmNewMenuItem_1 = new JMenuItem("Remove Word");
+        mntmNewMenuItem_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		JDialog remove = new JDialog();
+        		remove.setVisible(true);
+        		remove.setLayout(new FlowLayout());
+        		remove.setTitle("Remove word");
+        		remove.setSize(320,200);
+        		remove.setBackground(new Color(240, 255, 240));
+        		JTextField removetxt = new JTextField("",10);
+        		JLabel removelbl = new JLabel("Remove a word:");
+        		JLabel wordListlbl = new JLabel("Word list:");
+        		JButton removebtn = new JButton("Remove");
+        		JTextArea wordListArea = new JTextArea();
+        		
+        		
+        		remove.add(removelbl);
+        		remove.add(removetxt);
+        		remove.add(removebtn);
+        		remove.add(wordListlbl);
+        		remove.add(wordListArea);
+        
+        		//remove.add(listtxtArea);
+        		
+        	}
+        });
         mntmNewMenuItem_1.setForeground(new Color(216, 191, 216));
         mntmNewMenuItem_1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         mntmNewMenuItem_1.setBackground(new Color(255, 255, 240));
         mnNewMenu.add(mntmNewMenuItem_1);
         
         mntmNewMenuItem_2 = new JMenuItem("Exit");
+        mntmNewMenuItem_2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		System.exit(0);
+        	}
+        });
         mntmNewMenuItem_2.setForeground(new Color(216, 191, 216));
         mntmNewMenuItem_2.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         mntmNewMenuItem_2.setBackground(new Color(255, 255, 240));

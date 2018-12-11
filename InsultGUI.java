@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-public class InsultGUI extends Main {
+public class InsultGUI{
     private JPanel panel1;
     private JTextArea textArea1;
     private JButton YOMAMAButton;

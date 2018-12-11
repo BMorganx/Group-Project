@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
-public class InsultGUI {
+public class InsultGUI extends Main {
     private JPanel panel1;
     private JTextArea textArea1;
     private JButton YOMAMAButton;
@@ -18,6 +18,7 @@ public class InsultGUI {
     private JMenuItem mntmNewMenuItem;
     private JMenuItem mntmNewMenuItem_1;
     private JMenuItem mntmNewMenuItem_2;
+    
 
     Main main = new Main();
     private GridBagConstraints gbc_1;
@@ -29,6 +30,17 @@ public class InsultGUI {
     private GridBagConstraints gbc_6;
     private GridBagConstraints gbc_7;
     private JSeparator separator_1;
+    
+    private JLabel addlbl = new JLabel("Add a word:");        		
+	private JTextField addtxt = new JTextField("",10);
+	private JButton add = new JButton("Add");
+	private JTextArea wordArea = new JTextArea("");
+	private JLabel wordListlbl = new JLabel("Word List:");
+    
+    private JTextField removetxt = new JTextField("",10);
+	private JLabel removelbl = new JLabel("Remove a word:");
+	private JButton removebtn = new JButton("Remove");
+	private JTextArea wordListArea = new JTextArea();
 
     public InsultGUI() {
         $$$setupUI$$$();
@@ -138,20 +150,21 @@ public class InsultGUI {
         		no.getContentPane().setBackground(new Color(216, 191, 216));
         		no.getContentPane().setForeground(new Color(255, 255, 240));
         		no.setLayout(new FlowLayout());
-        		JLabel addlbl = new JLabel("Add a word:");        		
-        		JTextField addtxt = new JTextField("",10);
-        		JButton add = new JButton("Add");
-        		JTextArea wordArea = new JTextArea("");
-        		JLabel wordListlbl = new JLabel("Word List:");
-        		no.setSize(300,200);
+        		
+        		no.setSize(330,200);
         		no.add(addlbl);
         		no.add(addtxt);
         		no.add(add);
         		no.add(wordListlbl);
         		no.add(wordArea);
-        		
+        		wordArea.setEditable(false);
+        		try {
+					wordArea.setText(outputListOfFoods());
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
         		no.setTitle("Add word");
-        		//no.add(listtxtArea);
         	}
         });
         
@@ -166,14 +179,11 @@ public class InsultGUI {
         		JDialog remove = new JDialog();
         		remove.setVisible(true);
         		remove.setLayout(new FlowLayout());
+        		remove.getContentPane().setBackground(new Color(216, 191, 216));
+        		remove.getContentPane().setForeground(new Color(255, 255, 240));
         		remove.setTitle("Remove word");
-        		remove.setSize(320,200);
+        		remove.setSize(340,200);
         		remove.setBackground(new Color(240, 255, 240));
-        		JTextField removetxt = new JTextField("",10);
-        		JLabel removelbl = new JLabel("Remove a word:");
-        		JLabel wordListlbl = new JLabel("Word list:");
-        		JButton removebtn = new JButton("Remove");
-        		JTextArea wordListArea = new JTextArea();
         		
         		
         		remove.add(removelbl);
@@ -181,6 +191,14 @@ public class InsultGUI {
         		remove.add(removebtn);
         		remove.add(wordListlbl);
         		remove.add(wordListArea);
+        		remove.add(wordListArea);
+        		wordListArea.setEditable(false);
+        		try {
+					wordListArea.setText(outputListOfFoods());
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
         
         		//remove.add(listtxtArea);
         		
@@ -281,6 +299,19 @@ public class InsultGUI {
         if (listOfFoodsButtonFont != null) listOfFoodsButton.setFont(listOfFoodsButtonFont);
         listOfFoodsButton.setForeground(new Color(-1));
         listOfFoodsButton.setText("F O O D  L I S T");
+        
+        add.setBackground(new Color(-7194));
+        Font addBtnFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, -1, add.getFont());
+        if (addBtnFont != null) removebtn.setFont(addBtnFont);
+        add.setForeground(new Color(-1));
+        add.setText("A D D");
+        
+        removebtn.setBackground(new Color(-7194));
+        Font removeBtnFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, -1, removebtn.getFont());
+        if (removeBtnFont != null) removebtn.setFont(removeBtnFont);
+        removebtn.setForeground(new Color(-1));
+        removebtn.setText("R E M O V E");
+        
         gbc_6 = new GridBagConstraints();
         gbc_6.insets = new Insets(0, 0, 0, 5);
         gbc_6.gridx = 1;

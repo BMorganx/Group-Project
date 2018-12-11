@@ -26,6 +26,7 @@ public class Main {
         switch(choiceInsult) {
             case 1:
                 insult = outputSelf();
+
                 break;
             case 2:
                 insult = outputMama();
@@ -79,10 +80,11 @@ public class Main {
     /**
      * Desc: Pushes items in food list txt into a stack and pops the stack when called.
      * Postcondition: Outputs list of foods
+     * @return 
      * @throws FileNotFoundException if file is not found
      */
-    public void outputListOfFoods() throws FileNotFoundException {
-        ArrayStack arrayStack = new ArrayStack();
+    public static String outputListOfFoods() throws FileNotFoundException {
+        ArrayStack<String> arrayStack = new ArrayStack<String>();
 
         Scanner foodsFile = new Scanner(new File("Food.txt"));
 
@@ -92,7 +94,9 @@ public class Main {
 
         for(int i = 0; i <= arrayStack.size()+1; i++){
             System.out.println(arrayStack.pop());
+            return arrayStack.pop();
         }
+		return arrayStack.pop();
 
     }
 

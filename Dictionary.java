@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import project.ArrayBag;
+
 public class Dictionary {
 
     private ArrayBag<String> adjectives = new ArrayBag<>();

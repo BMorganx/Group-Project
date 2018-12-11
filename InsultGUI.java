@@ -6,9 +6,13 @@ import project.ArrayBag;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 public class InsultGUI extends Main {
     private JPanel panel1;
@@ -171,7 +175,18 @@ public class InsultGUI extends Main {
         		add.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-        				arrBag.add(addtxt.getText());
+						String fileContent = "\n" + (addtxt.getText());
+       			     
+        			    BufferedWriter writer;
+        			    
+						try {
+							writer = new BufferedWriter(new FileWriter("Food.txt", true));
+							writer.write(fileContent);
+							writer.close();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
         		});
         		no.setTitle("Add word");
@@ -218,10 +233,11 @@ public class InsultGUI extends Main {
         		removebtn.addActionListener(new ActionListener() {
         			@Override
         			public void actionPerformed(ActionEvent evt) {
-        				arrBag.remove(removetxt.getText());
+        			    
         			}
         			
         		});
+        		
         		
         		try {
                     // Read some text from the resource file to display in

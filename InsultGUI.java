@@ -1,8 +1,5 @@
 import javax.swing.*;
 import javax.swing.JPanel;
-
-import project.ArrayBag;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,10 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 
-public class InsultGUI extends Main {
+public class InsultGUI{
     private JPanel panel1;
     private JTextArea textArea1;
     private JButton YOMAMAButton;
@@ -27,8 +22,6 @@ public class InsultGUI extends Main {
     private JMenuItem mntmNewMenuItem;
     private JMenuItem mntmNewMenuItem_1;
     private JMenuItem mntmNewMenuItem_2;
-    
-	ArrayBag<String> arrBag = new ArrayBag();
 
     Main main = new Main();
     private GridBagConstraints gbc_1;
@@ -117,7 +110,7 @@ public class InsultGUI extends Main {
         frame.getContentPane().setBackground(new Color(240, 255, 240));
         frame.setContentPane(new InsultGUI().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(550, 450);
+        frame.setSize(600, 450);
         frame.setVisible(true);
 
     }
@@ -176,6 +169,7 @@ public class InsultGUI extends Main {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						String fileContent = "\n" + (addtxt.getText());
+						main.add(addtxt.getText());
        			     
         			    BufferedWriter writer;
         			    

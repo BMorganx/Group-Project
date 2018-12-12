@@ -204,48 +204,7 @@ public class InsultGUI{
         mntmNewMenuItem.setBackground(new Color(255, 255, 240));
         mnNewMenu.add(mntmNewMenuItem);
         
-        mntmNewMenuItem_1 = new JMenuItem("Remove Word");
-        mntmNewMenuItem_1.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent arg0) {
-        		JDialog remove = new JDialog();
-        		remove.setVisible(true);
-        		remove.setLayout(new FlowLayout());
-        		remove.getContentPane().setBackground(new Color(216, 191, 216));
-        		remove.getContentPane().setForeground(new Color(255, 255, 240));
-        		remove.setTitle("Remove word");
-        		
-        		remove.setBackground(new Color(240, 255, 240));
-        		remove.add(removelbl);
-        		remove.add(removetxt);
-        		remove.add(removebtn);
-        		remove.add(wordListlbl);
-        		remove.add(wordListArea);
-        		JScrollPane scroll = new JScrollPane (wordListArea, 
-     				   JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        		
-        		remove.add(scroll);
-        		removebtn.addActionListener(new ActionListener() {
-        			@Override
-        			public void actionPerformed(ActionEvent evt) {
-        			    
-        			}
-        			
-        		});
-        		
-        		
-        		try {
-                    // Read some text from the resource file to display in
-                    // the JTextArea.
-                    wordListArea.read(new InputStreamReader(
-                            getClass().getResourceAsStream("/Food.txt")),
-                        null);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-        		wordListArea.setEditable(false);
-        		
-        	}
-        });
+       
         mntmNewMenuItem_1.setForeground(new Color(216, 191, 216));
         mntmNewMenuItem_1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         mntmNewMenuItem_1.setBackground(new Color(255, 255, 240));
@@ -347,13 +306,7 @@ public class InsultGUI{
         if (addBtnFont != null) removebtn.setFont(addBtnFont);
         add.setForeground(new Color(-1));
         add.setText("A D D");
-        
-        removebtn.setBackground(new Color(-7194));
-        Font removeBtnFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, -1, removebtn.getFont());
-        if (removeBtnFont != null) removebtn.setFont(removeBtnFont);
-        removebtn.setForeground(new Color(-1));
-        removebtn.setText("R E M O V E");
-        
+       
         gbc_6 = new GridBagConstraints();
         gbc_6.insets = new Insets(0, 0, 0, 5);
         gbc_6.gridx = 1;

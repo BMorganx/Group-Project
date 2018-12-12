@@ -213,7 +213,7 @@ public class InsultGUI{
         		remove.getContentPane().setBackground(new Color(216, 191, 216));
         		remove.getContentPane().setForeground(new Color(255, 255, 240));
         		remove.setTitle("Remove word");
-        		remove.setSize(340,260);
+        		
         		remove.setBackground(new Color(240, 255, 240));
         		remove.add(removelbl);
         		remove.add(removetxt);

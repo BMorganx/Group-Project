@@ -39,12 +39,6 @@ public class InsultGUI{
 	private JButton add = new JButton("Add");
 	private JTextArea wordArea = new JTextArea(10, 20);
 	private JLabel wordListlbl = new JLabel("Word List:");
-    
-    private JTextField removetxt = new JTextField("",10);
-	private JLabel removelbl = new JLabel("Remove a word:");
-	private JButton removebtn = new JButton("Remove");
-	private JTextArea wordListArea = new JTextArea(10,20);
-
 
     public InsultGUI() {
         $$$setupUI$$$();
@@ -204,12 +198,6 @@ public class InsultGUI{
         mntmNewMenuItem.setBackground(new Color(255, 255, 240));
         mnNewMenu.add(mntmNewMenuItem);
         
-       
-        mntmNewMenuItem_1.setForeground(new Color(216, 191, 216));
-        mntmNewMenuItem_1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        mntmNewMenuItem_1.setBackground(new Color(255, 255, 240));
-        mnNewMenu.add(mntmNewMenuItem_1);
-        
         mntmNewMenuItem_2 = new JMenuItem("Exit");
         mntmNewMenuItem_2.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
@@ -303,7 +291,7 @@ public class InsultGUI{
         
         add.setBackground(new Color(-7194));
         Font addBtnFont = this.$$$getFont$$$("Century Gothic", Font.BOLD, -1, add.getFont());
-        if (addBtnFont != null) removebtn.setFont(addBtnFont);
+        if (addBtnFont != null) add.setFont(addBtnFont);
         add.setForeground(new Color(-1));
         add.setText("A D D");
        
